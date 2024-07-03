@@ -25,3 +25,10 @@ document.addEventListener("scroll", () => {
     arrowUp.style.opacity = 0;
   }
 });
+
+// Responsive Toggle Button
+const navbarMenu = document.querySelector(".header__menu");
+const navbarToggle = document.querySelector(".header__toggle");
+document.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
+});
