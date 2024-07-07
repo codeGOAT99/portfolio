@@ -32,7 +32,6 @@ function observerCallback(entries) {
       entry.isIntersecting &&
       entry.intersectionRatio >= 0.95;
   });
-
   const navIndex = selectLastOne
     ? sectionsIds.length - 1
     : findFirstIntersecting(visibleSections);
