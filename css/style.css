@@ -13,9 +13,17 @@
   --color-blue: #03e8f9;
   --color-orange: #fd6413;
   --color-gray: #1b1e26;
+  --home-bg-gradient: linear-gradient(
+    180deg,
+    rgba(8, 26, 60, 1) 0%,
+    rgba(5, 10, 19, 1) 100%
+  );
 
   /* Size */
   --size-max-width: 1200px;
+
+  /*Divider*/
+  --divider-arrow: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z"></path></svg>');
 }
 
 * {
@@ -146,6 +154,8 @@ button:focus {
 /* Home */
 #home {
   background-color: var(--color-primary);
+  background: rgb(8, 26, 60);
+  background: var(--home-bg-gradient);
   color: var(--color-text);
   padding: 5rem 1rem;
   padding-top: 7rem;
@@ -456,6 +466,7 @@ button:focus {
 .arrow-up {
   background-color: var(--color-primary);
   position: fixed;
+  z-index: 1;
   bottom: 3rem;
   right: 3rem;
   font-size: 3rem;
@@ -469,8 +480,23 @@ button:focus {
 
 /* Footer */
 #contact {
+  position: relative;
   background-color: var(--color-primary);
   color: var(--color-text);
+}
+
+#contact::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 1.3px);
+  height: 81px;
+  overflow: hidden;
+  line-height: 0;
+  background-color: var(--color-white);
+  mask: var(--divider-arrow);
+  -webkit-mask: var(--divider-arrow);
 }
 
 .contact__links {
